@@ -314,13 +314,13 @@ h1 h2::after {
   }
   .img-back {
     width: 100%;
-  }
-
+  }  
+    
   /* burger */
   .burger {
     display: block;
     position: relative;
-    right: -30%; /* ajout */
+    right: -30%;  /* ajout */
     padding: 0;
     width: 45px;
     height: 45px;
