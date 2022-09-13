@@ -32,18 +32,25 @@ app.get("/home", function (req, res) {
   });
 });
 
+app.get("/equipe", function (req, res) {
+  res.status(200).render("equipe.ejs");
+});
 app.get("/activites", function (req, res) {
   res.status(200).render("activites.ejs");
 });
-app.get("/equipe", function (req, res) {
-  res.status(200).render("equipe.ejs");
+app.get("/offre", function (req, res) {
+  res.status(200).render("offre.ejs");
 });
 app.get("/planing", function (req, res) {
   res.status(200).render("planing.ejs");
 });
+app.get("/blog", function (req, res) {
+  res.status(200).render("blog.ejs");
+});
 app.get("/contact", function (req, res) {
   res.status(200).render("contact.ejs");
 });
+
 app.get("/", function (req, res) {
   res.status(301).redirect("/home");
 });
