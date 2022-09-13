@@ -10,6 +10,7 @@ $(document).ready(function () {
     }
   });
 });
+
 ////////////////////////////////////////////////////////////
 // burger
 function toggleMenu() {
@@ -20,6 +21,7 @@ function toggleMenu() {
   });
 }
 toggleMenu();
+
 ////////////////////////////////////////////////////////////
 // form
 $("#formContact").on("submit", valid_f);

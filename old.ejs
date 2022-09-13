@@ -1,0 +1,103 @@
+// ⬇ burger
+<%
+  function toggleMenu() {
+  let navbar = document.getElementsByClassName("navbar");
+  let burger = document.getElementsByClassName("burger");
+  burger[0].addEventListener("click", () => {
+    navbar[0].classList.toggle("show-nav");
+  });
+}
+toggleMenu();
+
+
+
+// ⬇ barnav
+function changeColorOnScroll() {
+  const navbar = document.querySelector(".nav-fixed");
+  window.onscroll = () => {
+    if (window.scrollY > 100) {
+      navbar.classList.add("nav-active");
+    } else {
+      navbar.classList.remove("nav-active");
+    }
+  };
+}
+changeColorOnScroll();
+
+
+
+//⬇ formulaire
+doument.getElementById("formContact").addEventListener("submit", valid_f);
+function valid_f(e) {
+  let nom = document.getElementById("nom");
+  let prenom = document.getElementById("prenom");
+  let telephone = document.getElementById("tel");
+  let e_mail = document.getElementById("email");
+
+  let error_name = document.getElementById("error_name");
+  let error_prenom = document.getElementById("error_first_name");
+  let error_telephone = document.getElementById("error_tel");
+  let error_mail = document.getElementById("error_e_mail");
+
+  let myRegex = /^[a-zA-Z]+$/;
+  let myRegexNumb = /^[.0-9 ]+$/;
+  let myRegexMail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+  if (nom.value === "") {
+    error_name.innerHTML = "Votre nom";
+    error_name.style.color = " red";
+    nom.style.borderColor = "red";
+    e.preventDefault();
+  } else if (!myRegex.test(nom.value)) {
+    error_name.innerHTML = "vérifier les caractères";
+    error_name.style.color = "red";
+    nom.style.borderolor = "red";
+    e.preventDefault();
+  } else {
+    nom.style.borderColor = "green";
+  }
+
+  if (prenom.value === "") {
+    error_first_name.innerHTML = "Votre Prénom";
+    error_first_name.style.color = " red";
+    prenom.style.borderColor = "red";
+    e.preventDefault();
+  } else if (!myRegex.test(prenom.value)) {
+    error_first_name.innerHTML = "vérifier les caractères";
+    error_first_name.style.color = "red";
+    first_name.style.borderColor = "red";
+    e.preventDefault();
+  } else {
+    first_name.style.borderColor = "green";
+  }
+
+  if (telephone.value === "") {
+    error_tel.innerHTML = " vérifier Votre tel";
+    error_tel.style.color = " red";
+    tel.style.borderColor = "red";
+    e.preventDefault();
+  } else if (!myRegexNumb.test(telephone.value)) {
+    error_tel.innerHTML = "vérifier les caractères";
+    error_tel.style.color = "red";
+    tel.style.borderColor = "red";
+    e.preventDefault();
+  } else {
+    error_tel.style.color = "green";
+    tel.style.borderColor = "green";
+  }
+  if (e_mail.value === "") {
+    error_e_mail.innerHTML = " vérifier Votre e-mail";
+    e_mail.style.borderColor = " red";
+    error_e_mail.style.color = "red";
+    e.preventDefault();
+  } else if (!myRegexMail.test(e_mail.value)) {
+    error_e_mail.innerHTML = "e-mail non valide";
+    error_e_mail.style.color = "red";
+    e_mail.style.borderColor = "red";
+    e.preventDefault();
+  } else {
+    error_e_mail.style.color = "green";
+    e_mail.style.borderColor = "green";
+  }
+}
+%>
